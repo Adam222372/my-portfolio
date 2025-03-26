@@ -1,20 +1,21 @@
-import {NextRequest} from "next/server";
-import {redirect} from "next/navigation";
+import { NextResponse } from 'next/server';
 
-let locales = ["en", "cs"];
+const locales = ['en', 'cs'];
+const defaultLocale = 'en';
 
-function getLocale({request}: {request: NextRequest}) {
-    const clientLang = request.headers.get("accept-language");
-    return Response.json(clientLang);
+function getLocale(request: Request) {
+    const acceptLanguage = request.headers.get('accept-language') || '';
+    for (const locale of locales) {
+        if (acceptLanguage.includes(locale)) return locale;
+    }
+    return defaultLocale;
 }
 
+export function middleware(request: Request) {
+    const pathname = request.nextUrl.pathname;
 
-export function middleware({req}: { req: NextRequest }) {
-   const clientLang = req.headers.get("accept-language") || "en";
-   if (clientLang === "en") {
-       console.log("en")
-   }
-   else if (clientLang === "cs") {
-       console.log("cs")
-   }
+    if (!locales.some((locale) => pathname.startsWith(`/${locale}`))) {
+        const locale = getLocale(request);
+        return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
+    }
 }

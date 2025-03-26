@@ -1,9 +1,7 @@
-import Image from "next/image";
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Home() {
-  return (
-    <div className="">
+  const { t } = useTranslation('common'); // 'common' refers to the common.json file
 
-    </div>
-  );
+  return <h1>{t('hello')}</h1>; // Displays "Hello" or "Bonjour" based on the selected locale
 }
