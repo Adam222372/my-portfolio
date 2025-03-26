@@ -1,27 +1,23 @@
-[
-  {
-    "id": "about-me",
+{
+  "aboutme": {
     "title": "O mně",
     "description": "",
     "text": "",
     "photoUrl": ""
   },
-  {
-    "id": "carrier",
+  "carrier": {
     "title": "Kariéra",
-    "description": "Zajímá vás moje kariéra?",
+    "description": "Zajímá vás má kariéra?",
     "text": ""
   },
-  {
-    "id": "education",
+  "education": {
     "title": "Vzdělání",
     "description": "",
     "text": ""
   },
-  {
-    "id": "expreriences",
+  "experiences": {
     "title": "Zkušenosti",
     "description": "",
     "text": ""
   }
-]
+}

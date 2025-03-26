@@ -1,4 +1,4 @@
-import dataJson from "@/data.json"
+import dataJson from "../data.json"
 import Image from "next/image";
 
 interface DataItem {

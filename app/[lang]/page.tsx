@@ -1,16 +1,13 @@
-import { getDictionary } from './dictionaries';
+import {getDictionary} from "../dictionaries";
 
 export default async function Page({
                                        params,
                                    }: {
-    params: { lang: 'en' | 'cs' };
+    params: Promise<{ lang: string }>
 }) {
-    // Fetch the dictionary for the requested language
-    const dict = await getDictionary(params.lang);
-
-    return (
-        <div>
-            <h1>{dict.id}</h1> {/* Add to Cart */}
-        </div>
-    );
+    const { lang } = await params
+    const dictionary = await getDictionary(lang as "en" | "cs")
+    return(
+        <h1>{dictionary.aboutme.title}</h1>
+    )
 }
