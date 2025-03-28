@@ -28,7 +28,7 @@ export default function Contact() {
                     <a href={"tel:+420 603 488 921"} className={"my-3 flex"}> <Image src={"../../tel-icon.svg"}
                                                                                      alt={"tel-icon"}
                                                                                      width={20} height={20}/><p>+420 603
-                        488921</p></a>
+                        488 921</p></a>
                     <a href={"mailto:adamholecek22@gmail.com "} className={"my-3 flex space-x-2"}><Image
                         src={"../../mail-icon.svg"} alt={"mail-icon"} width={20} height={20}/><p>adamholecek22@gmail.com</p>
                     </a>
