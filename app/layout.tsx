@@ -2,7 +2,6 @@ import {Funnel_Display} from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Link from "next/link";
-import {allowedDisplayValues} from "next/dist/compiled/@next/font/dist/constants";
 
 const funelDisplay = Funnel_Display({
     subsets: ['latin'],
@@ -32,10 +31,10 @@ export default async function RootLayout({
                 </ul>
             </nav>
         </header>
+        {children}
         <footer className={"flex justify-center border-t border-white"}>
             <p>Adam Jiří Holeček</p>
         </footer>
-        {children}
         </body>
         </html>
     );

@@ -25,12 +25,12 @@ export default function Contact() {
 
                 </form>
                 <aside className={"flex justify-center flex-col m-8"}>
-                    <a href={"tel:+420 603 488 921"} className={"my-3 flex"}> <Image src={"/tel-icon.svg"}
+                    <a href={"tel:+420 603 488 921"} className={"my-3 flex"}> <Image src={"../../tel-icon.svg"}
                                                                                      alt={"tel-icon"}
                                                                                      width={20} height={20}/><p>+420 603
                         488921</p></a>
                     <a href={"mailto:adamholecek22@gmail.com "} className={"my-3 flex space-x-2"}><Image
-                        src={"/mail-icon.svg"} alt={"mail-icon"} width={20} height={20}/><p>adamholecek22@gmail.com</p>
+                        src={"../../mail-icon.svg"} alt={"mail-icon"} width={20} height={20}/><p>adamholecek22@gmail.com</p>
                     </a>
                 </aside>
             </div>
