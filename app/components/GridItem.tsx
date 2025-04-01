@@ -1,27 +1,28 @@
-import dataJson from "../data.json"
-import Image from "next/image";
+import { getDictionary } from "../dictionaries";
 
-interface DataItem {
-    id: string,
-    title: string,
-    description: string,
-    text: string,
-    image?: string,
+interface LocalizedContentProps {
+  lang: "en" | "cs";
 }
 
-export default function GridItem() {
-    return (
-        <div>
-            { dataJson.map((item: DataItem) => (
-                <div key={item.id}>
-                    <h1>{item.title}</h1>
-                    { item.image !== "" &&
-                        <Image src={`${item.image}`} alt={"Profile picture"} width={400} height={400} />
-                    }
-                    <p>{item.text}</p>
-                </div>
+export default async function GridItem({ lang }: LocalizedContentProps) {
+  const dictionary = await getDictionary(lang);
 
-            ))}
+  return (
+    <div>
+      {Object.entries(dictionary).map(([key, value]: [string, any]) => (
+        <div key={key} className="mb-6">
+          <h2 className="text-xl font-bold">{value.title}</h2>
+          <p className="text-gray-600">{value.description}</p>
+          {value.text && <p className="mt-2">{value.text}</p>}
+          {value.photoUrl && (
+            <img
+              src={value.photoUrl}
+              alt={value.title}
+              className="mt-4 rounded shadow"
+            />
+          )}
         </div>
-    )
+      ))}
+    </div>
+  );
 }
