@@ -1,4 +1,3 @@
-"use client"
 import GridItem from "../components/GridItem";
 
 export default async function Page({
