@@ -1,4 +1,4 @@
-import { BentoGrid } from "@/components/magicui/bento-grid";
+"use client"
 import GridItem from "../components/GridItem";
 import { FlickeringGrid } from "../components/magicui/flickering-grid";
 import { Button } from "@/components/ui/button";
