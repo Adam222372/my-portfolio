@@ -1,5 +1,6 @@
 import "../globals.css";
 import React from "react";
+import { Particles } from "../components/magicui/partiles";
 
 export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'cs' }];
@@ -18,7 +19,9 @@ export default async function RootLayout({
     return (
         <html lang={lang}>
         <body>
-        {children}
+            
+                {children}
+            
         </body>
         </html>
     );

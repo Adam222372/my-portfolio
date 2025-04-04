@@ -1,4 +1,8 @@
 {
+  "navbar": {
+    "home": "Domů",
+    "contact-me": "Kontaktujte mě"
+  },
   "aboutme": {
     "title": "O mně",
     "description": "",

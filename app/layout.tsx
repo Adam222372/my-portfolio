@@ -16,7 +16,8 @@ export default async function RootLayout({
     return (
         <html className={funelDisplay.className}>
         <body>
-        <header className={"border-b border-white w-full"}>
+            
+        <header className={"w-full"}>
             <nav className="mx-8 my-4 flex justify-between items-center">
                 <Link href="/">
                     <h1 className="text-3xl">Adam Holeček</h1>
@@ -32,9 +33,6 @@ export default async function RootLayout({
             </nav>
         </header>
         {children}
-        <footer className={"flex justify-center border-t border-white"}>
-            <p>Adam Jiří Holeček</p>
-        </footer>
         </body>
         </html>
     );

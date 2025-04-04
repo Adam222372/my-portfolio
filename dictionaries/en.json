@@ -1,4 +1,9 @@
 {
+  "navbar": {
+    "home": "Home",
+    "contact-me": "Contact me"
+  },
+
   "aboutme": {
     "title": "About me",
     "description": "",
