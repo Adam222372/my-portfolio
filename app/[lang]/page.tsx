@@ -1,4 +1,3 @@
-"use client"
 import GridItem from "../components/GridItem";
 import { FlickeringGrid } from "../components/magicui/flickering-grid";
 import { Button } from "@/components/ui/button";
@@ -21,7 +20,6 @@ export default async function Page({
         <div>
             <Particles className="">
                 <GridItem lang={lang}></GridItem>
-                <BentoGrid children={undefined}></BentoGrid>
             </Particles>
 
         </div>
