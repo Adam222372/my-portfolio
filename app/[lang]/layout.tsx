@@ -1,28 +1,23 @@
 import "../globals.css";
 import React from "react";
-import { Particles } from "../components/magicui/partiles";
-
-export async function generateStaticParams() {
-    return [{ lang: 'en' }, { lang: 'cs' }];
-}
+import { getDictionary } from "@/dictionaries/GetDictionary";
+import MenuBar from "../components/MenuBar";
 
 
 export default async function RootLayout({
-                                             children,
-                                             params
-                                         }: {
-    params: {lang: string};
+    children,
+    params
+}: {
+    params: { lang: string };
     children: React.ReactNode;
 }) {
-    const {lang} = await params;
-
+    const dictionary = await getDictionary(params.lang);
     return (
-        <html lang={lang}>
-        <body>
-            
+        <html lang={dictionary}>
+            <body>
+                <MenuBar lang={dictionary}></MenuBar>
                 {children}
-            
-        </body>
+            </body>
         </html>
     );
 }

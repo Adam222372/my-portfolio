@@ -1,7 +1,6 @@
 import GridItem from "../components/GridItem";
-import { FlickeringGrid } from "../components/magicui/flickering-grid";
-import { Button } from "@/components/ui/button";
 import { Particles } from "../components/magicui/partiles";
+import { getDictionary } from "@/dictionaries/GetDictionary";
 
 export default async function Page({
     params,
@@ -21,7 +20,6 @@ export default async function Page({
             <Particles className="">
                 <GridItem lang={lang}></GridItem>
             </Particles>
-
         </div>
     )
 }
