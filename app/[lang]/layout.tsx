@@ -1,6 +1,6 @@
 import "../globals.css";
 import React from "react";
-import { getDictionary } from "@/dictionaries/GetDictionary";
+import {getDictionary}  from "@/dictionaries/getDictionary";
 import MenuBar from "../components/MenuBar";
 
 
