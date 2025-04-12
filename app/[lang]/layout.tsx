@@ -1,8 +1,11 @@
 import "../globals.css";
 import React from "react";
-import {getDictionary}  from "@/dictionaries/getDictionary";
 import MenuBar from "../components/MenuBar";
+import { Particles } from "../components/magicui/partiles";
 
+export async function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'cs' }]
+}
 
 export default async function RootLayout({
     children,
@@ -11,11 +14,12 @@ export default async function RootLayout({
     params: { lang: string };
     children: React.ReactNode;
 }) {
-    const dictionary = await getDictionary(params.lang);
+    const dic = await params;
+
     return (
-        <html lang={dictionary}>
+        <html lang={dic.lang}>
             <body>
-                <MenuBar lang={dictionary}></MenuBar>
+                <MenuBar lang={dic.lang}></MenuBar>
                 {children}
             </body>
         </html>

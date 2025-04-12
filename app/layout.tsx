@@ -1,4 +1,4 @@
-import {Funnel_Display} from "next/font/google";
+import { Funnel_Display } from "next/font/google";
 import "./globals.css";
 import React from "react";
 
@@ -8,15 +8,15 @@ const funelDisplay = Funnel_Display({
 })
 
 export default async function RootLayout({
-                                             children,
-                                         }: {
+    children,
+}: {
     children: React.ReactNode;
 }) {
     return (
         <html className={funelDisplay.className}>
-        <body>
-        {children}
-        </body>
+            <body>
+                {children}
+            </body>
         </html>
     );
 }

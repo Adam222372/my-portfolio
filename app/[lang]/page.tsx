@@ -5,20 +5,14 @@ import { getDictionary } from "@/dictionaries/getDictionary";
 export default async function Page({
     params,
 }: {
-    params: Promise<{ lang: string }>
+    params: Promise<{ lang: "en" | "cs" }>;
 }) {
     const { lang } = await params;
     const dictionary = await getDictionary(lang);
 
-    if (lang !== "en" && lang !== "cs") {
-        throw new Error(`Unsupported language: ${lang}`);
-    }
-
     return (
         <div>
-            <Particles className="">
-                <GridItem lang={lang}></GridItem>
-            </Particles>
+           
         </div>
     )
 }
