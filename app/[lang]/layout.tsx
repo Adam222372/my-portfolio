@@ -1,7 +1,6 @@
 import "../globals.css";
 import React from "react";
 import MenuBar from "../components/MenuBar";
-import { Particles } from "../components/magicui/partiles";
 
 export async function generateStaticParams() {
     return [{ lang: 'en' }, { lang: 'cs' }]

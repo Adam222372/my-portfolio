@@ -1,3 +1,4 @@
+import React from "react";
 import { getDictionary } from "../dictionaries";
 
 interface LocalizedContentProps {
