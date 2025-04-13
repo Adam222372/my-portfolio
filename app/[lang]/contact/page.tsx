@@ -6,24 +6,25 @@ export default function Contact() {
             <h2 className={"text-center text-2xl"}>Contact me</h2>
             <div className={"flex justify-center flex-col items-center"}>
                   
-                <form action={"/contact"} method={"POST"} className={"flex flex-col my-10"}>
+                <form action={"/contact"} method={"POST"} className={"flex flex-col my-8"}>
 
                     <div className="flex space-y-2 justify-between w-full">
                     <input type={"email"} name={"email"} placeholder={"Email Address"}
                            className={"border-b-2 border-gray-500 focus:border-white focus:outline-hidden my-8 w-55"}
                            required={true}/>
 
-                    <input type={"text"} name={"subject"} placeholder={"Subject"} required={true}
+                    <input type={"text"} name={"subject"} placeholder={"Subject"}
                            className={"border-b-2  border-gray-500 focus:border-white focus:outline-hidden my-8 w-55"}/>
 
                     </div>
                    
-                    <textarea name={"notes"}
-                              className={" border-gray-500 focus:border-white focus:outline-hidden border-2 rounded-xl min-w-125 max-w-lg h-70 min-h-75 resize placeholder:ml-2"}
-                              placeholder={"Notes..."}></textarea>
+                    <textarea name={"notes"} placeholder={"Notes..."}
+                              className={" border-gray-500 focus:border-white focus:outline-hidden border-2 rounded-xl min-w-125 max-w-lg h-70 min-h-75 resize placeholder:ml-2"}></textarea>
 
-
-                    <button className={"bg-white text-black rounded-lg focus:border-white w-30 h-8 my-8 cursor-pointer m-2 item-end"}>Submit</button>
+                    <div className="flex justify-end items-center">
+                    <button className={"bg-white text-black rounded-lg focus:border-white w-25 h-8 cursor-pointer m-4 hover:bg-gray-400 transition "}>Submit</button>
+                    </div>
+                    
                 </form>
 
 
