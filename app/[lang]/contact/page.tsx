@@ -22,7 +22,7 @@ export default function Contact() {
                               className={" border-gray-500 focus:border-white focus:outline-hidden border-2 rounded-xl min-w-125 max-w-lg h-70 min-h-75 resize placeholder:ml-2"}></textarea>
 
                     <div className="flex justify-end items-center">
-                    <button className={"bg-white text-black rounded-lg focus:border-white w-25 h-8 cursor-pointer m-4 hover:bg-gray-400 transition "}>Submit</button>
+                    <button className={" bg-electric-blue text-white rounded-lg w-25 h-8 cursor-pointer m-4 hover:bg-electric-blue/70 transition "}>Submit</button>
                     </div>
                     
                 </form>
