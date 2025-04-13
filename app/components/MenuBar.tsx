@@ -14,14 +14,14 @@ export default async function MenuBar({ lang }: { lang: string }) {
     ]
 
     return (
-        <div className={"flex items-center mt-2 p-4 justify-between"}>
-            <Link href={"/"} className=" text-2xl">Adam Holeček</Link>
+        <div className={"flex items-center m-4 justify-between"}>
+            <Link href={"/"} className="text-[16px]">Adam Holeček</Link>
 
-            <div className="flex items-center  space-x-4 ">
-                <Link href="/" className="rounded-full p-1 px-4 hover:bg-gray-400 transition">
+            <div className="flex items-center space-x-2">
+                <Link href="/" className="rounded-full p-1 px-2 hover:bg-gray-400 transition">
                     {dictionary.navbar.home}
                 </Link>
-                <Link href="/project" className="rounded-full p-1 px-4 hover:bg-gray-400 transition">
+                <Link href="/project" className="rounded-full p-1 px-2 hover:bg-gray-400 transition">
                     {dictionary.navbar.projects}
                 </Link>
             </div>
