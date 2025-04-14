@@ -13,7 +13,7 @@ export default async function Page({
     return (
         <div>
 
-            <div className="relative flex h-[500px] top-[150px] w-full flex-col items-center justify-center">
+            <div className="relative flex h-[500px] top-[100px] w-full flex-col items-center justify-center">
                 <DotPattern className={cn(
                     "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
                 )}>
