@@ -26,7 +26,7 @@ export default async function MenuBar({ lang }: { lang: string }) {
                 </Link>
             </div>
             <Link href={"/contact"}>
-            <Button className="rounded-xl cursor-pointer bg-electric-blue text-white text-[16px] hover:bg-electric-blue/70 p-4 py-5">Contact me</Button>
+            <Button className="rounded-xl cursor-pointer bg-electric-blue text-white text-[16px] hover:bg-electric-blue/70 p-4 py-5">{dictionary.navbar.contactMe}</Button>
             </Link>
         </div>
 

@@ -1,15 +1,9 @@
-import { Funnel_Display } from "next/font/google";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import { Inter } from "next/font/google";
 
-const funelDisplay = Funnel_Display({
+const inter = Inter({
     subsets: ['latin'],
-    weight: ['400']
-})
-const InterFont = Inter({
-    subsets: ['latin'],
-    weight: ['400', '700']
 });
 
 export default async function RootLayout({
@@ -18,7 +12,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html className={InterFont.className}>
+        <html>
             <body>
                 {children}
             </body>

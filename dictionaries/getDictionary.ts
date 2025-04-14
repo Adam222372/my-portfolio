@@ -1,7 +1,7 @@
 export async function getDictionary(lang: string) {
     try {
         const dictionary = await import(`./${lang}.json`);
-        return dictionary; // Access the default export of the JSON file
+        return dictionary.default; 
     } catch (error) {
         console.error(`Error loading dictionary for language "${lang}":`, error);
         throw new Error(`Could not load dictionary for language: ${lang}`);

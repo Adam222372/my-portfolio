@@ -29,10 +29,10 @@ export default function Contact() {
 
            
                 <div className={"flex justify-center flex-col"}>
-                    <a href={"tel:+420 603 488 921"} className={"my-3 flex"}> <Image src="/../../public/tel-icon.svg" alt={"tel-icon"} width={20} height={20}/><p>+420 603
+                    <a href={"tel:+420 603 488 921"} className={"my-3 flex"}> <Image src="/telephone-fill.svg" alt={"tel-icon"} width={20} height={20}/><p>+420 603
                         488 921</p></a>
                     <a href={"mailto:adamholecek22@gmail.com "} className={"my-3 flex space-x-2"}>
-                        <Image src={"../../../public/mail-icon.svg"} alt={"mail-icon"} width={20} height={20}/><p>adamholecek22@gmail.com</p>
+                        <img src={"/mail.svg"} alt={"mail-icon"} width={20} height={20}/><p>adamholecek22@gmail.com</p>
                     </a>
                 </div>
                

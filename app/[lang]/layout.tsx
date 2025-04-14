@@ -16,7 +16,7 @@ export default async function RootLayout({
     const dic = await params;
 
     return (
-        <html lang={dic.lang}>
+        <html>
             <body>
                 <MenuBar lang={dic.lang}></MenuBar>
                 {children}

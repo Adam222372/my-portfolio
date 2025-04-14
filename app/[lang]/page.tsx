@@ -8,7 +8,7 @@ export default async function Page({
     params: Promise<{ lang: "en" | "cs" }>;
 }) {
     const { lang } = await params;
-    const dictionary = await getDictionary(lang);
+    //const dictionary = await getDictionary(lang);
 
     return (
         <div>
@@ -22,7 +22,7 @@ export default async function Page({
                     <h1 className="text-[96px]/24 flex flex-col font-semibold">Development <span className="text-electric-blue italic font-normal">With</span> Sence</h1>
                     <p className="m-4 pt-4 tracking-[.2em] text-xl ">Made by Adam Holeček</p>
                 </div>
-
+                
             </div>
         </div>
     )

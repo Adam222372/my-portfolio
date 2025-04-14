@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from 'next/server';
 const locales = ['en', 'cs'];
 const defaultLocale = 'en';
 
-// Helper to determine the preferred locale
 export function getLocale(request: NextRequest) {
     const acceptLanguage = request.headers.get('accept-language') || '';
     // Match the first supported locale found in the accept-language header
