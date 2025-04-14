@@ -5,19 +5,6 @@ import { motion } from "motion/react"
 import type React from "react"
 import { useEffect, useId, useRef, useState } from "react"
 
-/**
- *  DotPattern Component Props
- *
- * @param {number} [width=16] - The horizontal spacing between dots
- * @param {number} [height=16] - The vertical spacing between dots
- * @param {number} [x=0] - The x-offset of the entire pattern
- * @param {number} [y=0] - The y-offset of the entire pattern
- * @param {number} [cx=1] - The x-offset of individual dots
- * @param {number} [cy=1] - The y-offset of individual dots
- * @param {number} [cr=1] - The radius of each dot
- * @param {string} [className] - Additional CSS classes to apply to the SVG container
- * @param {boolean} [glow=false] - Whether dots should have a glowing animation effect
- */
 interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
   width?: number
   height?: number
@@ -28,38 +15,9 @@ interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
   cr?: number
   className?: string
   glow?: boolean
+  fadeEdges?: boolean
   [key: string]: unknown
 }
-
-/**
- * DotPattern Component
- *
- * A React component that creates an animated or static dot pattern background using SVG.
- * The pattern automatically adjusts to fill its container and can optionally display glowing dots.
- *
- * @component
- *
- * @see DotPatternProps for the props interface.
- *
- * @example
- * // Basic usage
- * <DotPattern />
- *
- * // With glowing effect and custom spacing
- * <DotPattern
- *   width={20}
- *   height={20}
- *   glow={true}
- *   className="opacity-50"
- * />
- *
- * @notes
- * - The component is client-side only ("use client")
- * - Automatically responds to container size changes
- * - When glow is enabled, dots will animate with random delays and durations
- * - Uses Motion for animations
- * - Dots color can be controlled via the text color utility classes
- */
 
 export function DotPattern({
   width = 16,
@@ -71,6 +29,7 @@ export function DotPattern({
   cr = 1,
   className,
   glow = false,
+  fadeEdges = false,
   ...props
 }: DotPatternProps) {
   const id = useId()
@@ -119,36 +78,63 @@ export function DotPattern({
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
-      {dots.map((dot, index) => (
-        <motion.circle
-          key={`${dot.x}-${dot.y}`}
-          cx={dot.x}
-          cy={dot.y}
-          r={cr}
-          fill={glow ? `url(#${id}-gradient)` : "currentColor"}
-          className="text-neutral-400/80"
-          initial={glow ? { opacity: 0.4, scale: 1 } : {}}
-          animate={
-            glow
-              ? {
-                  opacity: [0.4, 1, 0.4],
-                  scale: [1, 1.5, 1],
-                }
-              : {}
-          }
-          transition={
-            glow
-              ? {
-                  duration: dot.duration,
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "reverse",
-                  delay: dot.delay,
-                  ease: "easeInOut",
-                }
-              : {}
-          }
-        />
-      ))}
+      {dots.map((dot, index) => {
+        // Calculate distance from edges for linear fade effect
+        let opacity = 1
+        if (fadeEdges) {
+          // Calculate normalized distances from edges (0 at edge, 1 at center)
+          const normalizedX = (2 * Math.min(dot.x, dimensions.width - dot.x)) / dimensions.width
+          const normalizedY = (2 * Math.min(dot.y, dimensions.height - dot.y)) / dimensions.height
+
+          // Use the minimum distance to any edge
+          const edgeDistance = Math.min(normalizedX, normalizedY)
+
+          // Apply a less aggressive fade function (square root instead of cube)
+          // This makes more dots visible toward the edges
+          opacity = Math.sqrt(edgeDistance)
+
+          // Boost the opacity to make more dots visible
+          opacity = Math.min(1, opacity * 1.5)
+
+          // Only make dots completely disappear if they're very close to the edge
+          if (edgeDistance < 0.05) opacity = 0
+        }
+
+        return (
+          <motion.circle
+            key={`${dot.x}-${dot.y}`}
+            cx={dot.x}
+            cy={dot.y}
+            r={cr}
+            fill="currentColor"
+            opacity={opacity}
+            initial={glow ? { opacity: fadeEdges ? opacity * 0.4 : 0.4, scale: 1 } : {}}
+            animate={
+              glow
+                ? {
+                    opacity: [
+                      fadeEdges ? opacity * 0.4 : 0.4,
+                      fadeEdges ? opacity : 1,
+                      fadeEdges ? opacity * 0.4 : 0.4,
+                    ],
+                    scale: [1, 1.5, 1],
+                  }
+                : {}
+            }
+            transition={
+              glow
+                ? {
+                    duration: dot.duration,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: "reverse",
+                    delay: dot.delay,
+                    ease: "easeInOut",
+                  }
+                : {}
+            }
+          />
+        )
+      })}
     </svg>
   )
 }
