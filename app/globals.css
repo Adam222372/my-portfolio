@@ -12,6 +12,8 @@
 
 @theme{
   --color-electric-blue: #4896b5;
+  --color-jet-black: #252525;
+  --color-space-black: #212121;
 }
 
 :root {
@@ -136,6 +138,6 @@
 
 
 body {
-  background: #252525;
+  background: #212121;
   color: #fff;
 }
