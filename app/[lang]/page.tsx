@@ -1,4 +1,4 @@
-import { getDictionary } from "../../dictionaries/getDictionary";
+//import { getDictionary } from "../../dictionaries/getDictionary";
 import { DotPattern } from "../components/magicui/dot-pattern";
 import { cn } from "../../lib/utils";
 

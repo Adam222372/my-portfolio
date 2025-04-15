@@ -2,25 +2,20 @@ import "../globals.css";
 import React from "react";
 import MenuBar from "../components/MenuBar";
 
-export async function generateStaticParams() {
-    return [{ lang: 'en' }, { lang: 'cs' }]
-}
-
 export default async function RootLayout({
-    children,
-    params
+  children,
+  params
 }: {
-    params: { lang: string };
-    children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+  children: React.ReactNode;
 }) {
-    const dic = await params;
-
-    return (
-        <html>
-            <body>
-                <MenuBar lang={dic.lang}></MenuBar>
-                {children}
-            </body>
-        </html>
-    );
+    const dictionary = await params;
+  return (
+    <html>
+      <body>
+        <MenuBar lang={dictionary.lang} />
+        {children}
+      </body>
+    </html>
+  );
 }
