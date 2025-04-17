@@ -12,14 +12,7 @@ export default async function Page({
 
     return (
         <div>
-            <div>
-
-            </div>
-            
-            <div className="bg-">
-
-            </div>
-            <div className="relative flex h-[500px] top-[100px] w-full flex-col items-center justify-center">
+            <div className="relative flex h-[500px] w-full flex-col items-center justify-center my-30">
                 <DotPattern className={cn(
                     "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]"
                 )}>
@@ -28,6 +21,9 @@ export default async function Page({
                     <h1 className="text-[96px]/24 flex flex-col font-semibold">Development <span className="text-electric-blue italic font-medium">Make</span> Sense</h1>
                     <p className="m-4 pt-4 tracking-[3px] text-xl ">Made by Adam Holeček</p>
                 </div>
+            </div>
+            <div className="bg-linear-r from-real-black from-0% via-middle-black via-10% to-space-jet-black to-100% h-screen w-full">
+                   edfg
             </div>
         </div>
     )
