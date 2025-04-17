@@ -22,7 +22,7 @@ export default async function Page({
                     <p className="m-4 pt-4 tracking-[3px] text-xl ">Made by Adam Holeček</p>
                 </div>
             </div>
-            <div className="bg-linear-r from-real-black from-0% via-middle-black via-10% to-space-jet-black to-100% h-screen w-full">
+            <div className="bg-gradient-to-b from-real-black  via-middle-black to-space-jet-black  h-screen">
                    edfg
             </div>
         </div>
