@@ -22,8 +22,8 @@ export default async function Page({
                     <p className="m-4 pt-4 tracking-[3px] text-xl ">Made by Adam Holeček</p>
                 </div>
             </div>
-            <div className="bg-gradient-to-b from-real-black  via-middle-black to-space-jet-black  h-screen">
-                   edfg
+            <div className="bg-[linear-gradient(to_bottom,_#0a0a0a,_#171717_10%,_#252525_100%)] bg-cover bg-no-repeat bg-center h-[500px]">
+                   
             </div>
         </div>
     )
