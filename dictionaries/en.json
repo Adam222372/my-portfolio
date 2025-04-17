@@ -4,6 +4,11 @@
     "projects": "Projects",
     "contactMe": "Contact me"
   },
+  "heading": {
+    "title": "Development",
+    "middle": "Make",
+    "last": "Sense"
+  },
 
   "aboutme": {
     "title": "About me",

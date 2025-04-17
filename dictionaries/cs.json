@@ -4,6 +4,11 @@
     "projects": "Projekty",
     "contactMe": "Kontaktujte mě"
   },
+  "heading": {
+    "title": "Vývoj",
+    "middle": "Dávající",
+    "last": "Smysl"
+  },
   "aboutme": {
     "title": "O mně",
     "description": "",

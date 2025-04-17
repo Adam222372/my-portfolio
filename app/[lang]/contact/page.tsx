@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Contact() {
     return (
         <div className={"mt-[100px] flex flex-col justify-center items-center"}>

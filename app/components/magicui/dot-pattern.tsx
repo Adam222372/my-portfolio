@@ -22,8 +22,6 @@ interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
 export function DotPattern({
   width = 16,
   height = 16,
-  x = 0,
-  y = 0,
   cx = 1,
   cy = 1,
   cr = 1,
@@ -78,7 +76,7 @@ export function DotPattern({
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
-      {dots.map((dot, index) => {
+      {dots.map((dot) => {
         // Calculate distance from edges for linear fade effect
         let opacity = 1
         if (fadeEdges) {
