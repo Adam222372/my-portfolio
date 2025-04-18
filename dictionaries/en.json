@@ -5,11 +5,11 @@
     "contactMe": "Contact me"
   },
   "heading": {
-    "title": "Development",
-    "middle": "Make",
-    "last": "Sense"
+    "first": "Meaningful",
+    "middle": "Development",
+    "last": null
   },
-
+  "heading-description": "made by Adam Holeček",
   "aboutme": {
     "title": "About me",
     "description": "",

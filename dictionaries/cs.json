@@ -5,10 +5,11 @@
     "contactMe": "Kontaktujte mě"
   },
   "heading": {
-    "title": "Vývoj",
+    "first": "Vývoj",
     "middle": "Dávající",
     "last": "Smysl"
   },
+  "heading-description": "Vytvořil: Adam Holeček",
   "aboutme": {
     "title": "O mně",
     "description": "",
