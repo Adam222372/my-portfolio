@@ -3,7 +3,6 @@ import React from "react";
 import MenuBar from "../components/MenuBar";
 import { Inter } from "next/font/google";
 
-export const dynamic = "force-dynamic"; 
 
 const inter = Inter({
   subsets: ["latin"],
