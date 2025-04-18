@@ -1,19 +1,25 @@
 import "../globals.css";
 import React from "react";
 import MenuBar from "../components/MenuBar";
+import { Inter } from "next/font/google";
 
-export default async function RootLayout({
+const inter = Inter({
+    subsets: ["latin"],
+});
+
+export default function RootLayout({
   children,
-  params
+  params,
 }: {
-  params: Promise<{ lang: string }>;
+  params: { lang: string };
   children: React.ReactNode;
 }) {
-    const dictionary = await params;
+  const { lang } = params;
+
   return (
-    <html>
+    <html lang={lang} className={inter.className}>
       <body>
-        <MenuBar lang={dictionary.lang} />
+        <MenuBar lang={lang} />
         {children}
       </body>
     </html>
