@@ -1,10 +1,11 @@
 import { DotPattern } from "../components/magicui/dot-pattern";
 import { cn } from "../../lib/utils";
+import React from "react";
 
 export const dynamic = "force-dynamic";
 
 export default async function Page({ params }: { params: { lang: string } }) {
-    const { lang } = params;
+    //const { lang } = params;
 
     return (
         <div>

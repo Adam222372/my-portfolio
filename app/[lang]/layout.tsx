@@ -7,14 +7,14 @@ const inter = Inter({
     subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   params: { lang: string };
   children: React.ReactNode;
 }) {
-  const { lang } = params;
+  const { lang } = await params;
 
   return (
     <html lang={lang} className={inter.className}>
