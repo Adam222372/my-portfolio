@@ -2,7 +2,7 @@ import React from "react";
 import { getDictionary } from "@/dictionaries/getDictionary";
 
 
-export default async function Contact({ params }: { params: Promise<{ lang: string }> }) {
+  export default async function Contact({ params }: { params: Promise<{ lang: string }> }) {
     const { lang } = await params;
     const dictionary = await getDictionary(lang);
 
