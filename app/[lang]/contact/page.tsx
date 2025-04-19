@@ -11,8 +11,8 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function Contact({ params }: { params: { lang: string } }) {
-    const { lang } = params;
+export default async function Contact({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang } = await params;
 
     // Fetch the dictionary for the current language
     const dictionary = await getDictionary(lang);
