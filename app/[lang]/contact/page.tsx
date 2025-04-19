@@ -1,20 +1,9 @@
 import React from "react";
 import { getDictionary } from "@/dictionaries/getDictionary";
 
-// Define the languages you want to support
-const supportedLanguages = ["en", "cs"]; // Add your supported languages here
-
-// Generate static params for each language
-export async function generateStaticParams() {
-    return supportedLanguages.map((lang) => ({
-        lang,
-    }));
-}
 
 export default async function Contact({ params }: { params: Promise<{ lang: string }> }) {
     const { lang } = await params;
-
-    // Fetch the dictionary for the current language
     const dictionary = await getDictionary(lang);
 
     return (
@@ -25,7 +14,7 @@ export default async function Contact({ params }: { params: Promise<{ lang: stri
                         <input
                             type="email"
                             name="email"
-                            placeholder={dictionary.contact.email} // Dynamic placeholder
+                            placeholder={dictionary.contact.email} 
                             required
                             className="border-b-2 border-luxury-gray focus:border-white focus:outline-hidden my-8 w-55"
                         />
@@ -33,7 +22,7 @@ export default async function Contact({ params }: { params: Promise<{ lang: stri
                         <input
                             type="text"
                             name="subject"
-                            placeholder={dictionary.contact.subject} // Dynamic placeholder
+                            placeholder={dictionary.contact.subject} 
                             required
                             className="border-b-2 border-luxury-gray focus:border-white focus:outline-hidden my-8 w-55"
                         />
@@ -41,7 +30,7 @@ export default async function Contact({ params }: { params: Promise<{ lang: stri
 
                     <textarea
                         name="notes"
-                        placeholder={dictionary.contact.message} // Dynamic placeholder
+                        placeholder={dictionary.contact.message}
                         required
                         className="border-luxury-gray border-2 focus:border-white focus:outline-hidden rounded-xl min-w-125 max-w-lg h-70 min-h-75 resize placeholder:ml-2 p-[1rem]"
                     ></textarea>
