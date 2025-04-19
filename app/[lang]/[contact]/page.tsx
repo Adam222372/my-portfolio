@@ -1,13 +1,6 @@
 import React from "react";
 import { getDictionary } from "@/dictionaries/getDictionary";
 
-const supLangs = ["en", "cs"] // Define supported languages
-
-export async function generateStaticParams() {
-    return supLangs.map((lang) => ({
-        lang, // Each object must have a `lang` key
-    }));
-}
 
   export default async function Contact({ params }: { params: Promise<{ lang: string }> }) {
     const { lang } = await params;
