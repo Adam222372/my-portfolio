@@ -1,10 +1,16 @@
 import React from "react";
 import { getDictionary } from "@/dictionaries/getDictionary";
 
+export function generateStaticParams(){
+    return [
+        { lang: "en" },
+        { lang: "cs" }
+    ]
+}
 
-  export default async function Contact({ params }: { params: Promise<{ lang: string }> }) {
-    const { lang } = await params;
-    const dictionary = await getDictionary(lang);
+
+export default async function Contact({params}: {params: Promise<{lang: string}>}) {
+    const dictionary = await getDictionary((await (params)).lang);
 
     return (
         <div className="mt-[100px] flex flex-col justify-center items-center">

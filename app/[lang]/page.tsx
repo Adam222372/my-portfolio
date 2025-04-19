@@ -3,6 +3,14 @@ import { cn } from "../../lib/utils";
 import React from "react";
 import { getDictionary } from "@/dictionaries/getDictionary";
 
+
+export function generateStaticParams() {
+    return [
+        { lang: "en" },
+        { lang: "cs" },
+    ];
+}
+
 export default async function Page({
     params,
 }: {
