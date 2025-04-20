@@ -1,5 +1,5 @@
 import React from "react";
-import { getDictionary } from "@/dictionaries/getDictionary";
+import { getDictionary } from "../../../dictionaries/getDictionary";
 
 export function generateStaticParams(){
     return [

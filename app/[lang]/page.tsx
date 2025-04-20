@@ -1,8 +1,8 @@
 import { DotPattern } from "../components/magicui/dot-pattern";
 import { cn } from "../../lib/utils";
 import React from "react";
-import { getDictionary } from "@/dictionaries/getDictionary";
-
+import { getDictionary } from "../../dictionaries/getDictionary";
+import Image from "next/image";
 
 export function generateStaticParams() {
     return [
@@ -14,10 +14,10 @@ export function generateStaticParams() {
 export default async function Page({
     params,
 }: {
-    params: Promise<{ lang: string }>; // Correctly type params
+    params: Promise<{ lang: string }>;
 }) {
-    const { lang } = await params; // Access lang directly from params
-    const dictionary = await getDictionary(lang); // Use params.lang
+    const { lang } = await params;
+    const dictionary = await getDictionary(lang);
 
     return (
         <div>
@@ -40,7 +40,16 @@ export default async function Page({
                     </p>
                 </div>
             </div>
-            <div className="bg-[linear-gradient(to_bottom,_#0a0a0a,_#171717_10%,_#252525_100%)] bg-cover bg-no-repeat bg-center h-[500px]"></div>
+            <div className="bg-[linear-gradient(to_bottom,_#0a0a0a_0%,_#171717_10%,_#252525_100%)] bg-cover bg-no-repeat bg-center h-[1000px] flex flex-col items-center justify-center">
+                <div className="bg-jet-black shadow-electric-blue/50 shadow-2xl w-[700px] h-[400px] rounded-lg flex flex-col m-12">
+                    <div className="flex">
+                        <Image alt="profile picture" src={"/profile.png"} width={30} height={30} className="mr-8 rounded-3xl ce"></Image>
+                        <h3 className="font-semibold ">About Me</h3>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+
         </div>
     );
 }
