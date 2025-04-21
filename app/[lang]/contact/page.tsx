@@ -1,15 +1,8 @@
 import React from "react";
-import { getDictionary } from "../../../dictionaries/getDictionary";
+import { getDictionary } from "../dictionaries";
 
-export function generateStaticParams(){
-    return [
-        { lang: "en" },
-        { lang: "cs" }
-    ]
-}
-
-
-export default async function Contact({params}: {params: Promise<{lang: string}>}) {
+export default async function Contact({params}: {params: Promise<{lang: "en" | "cs"}>}) {
+    
     const dictionary = await getDictionary((await (params)).lang);
 
     return (

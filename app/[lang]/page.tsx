@@ -1,20 +1,14 @@
-import { DotPattern } from "../components/magicui/dot-pattern";
-import { cn } from "../../lib/utils";
+import { DotPattern } from "@/components/magicui/dot-pattern";
+import { cn } from "@/lib/utils";
 import React from "react";
-import { getDictionary } from "../../dictionaries/getDictionary";
+import { getDictionary } from "./dictionaries"
 import Image from "next/image";
 
-export function generateStaticParams() {
-    return [
-        { lang: "en" },
-        { lang: "cs" },
-    ];
-}
 
 export default async function Page({
     params,
 }: {
-    params: Promise<{ lang: string }>;
+    params: Promise<{ lang: "cs" | "en" }>;
 }) {
     const { lang } = await params;
     const dictionary = await getDictionary(lang);
@@ -32,7 +26,7 @@ export default async function Page({
                         {dictionary.heading.first}
                         <span className="text-electric-blue tracking-[-5px] font-medium">
                             {dictionary.heading.middle}
-                        </span>{" "}
+                        </span>
                         {dictionary.heading.last}
                     </h1>
                     <p className="m-4 py-4 tracking-[0.1em] text-xl ">
@@ -42,9 +36,9 @@ export default async function Page({
             </div>
             <div className="bg-[linear-gradient(to_bottom,_#0a0a0a_0%,_#171717_10%,_#252525_100%)] bg-cover bg-no-repeat bg-center h-[1000px] flex flex-col items-center justify-center">
                 <div className="bg-jet-black shadow-electric-blue/50 shadow-2xl w-[700px] h-[400px] rounded-lg flex flex-col m-12">
-                    <div className="flex">
-                        <Image alt="profile picture" src={"/profile.png"} width={30} height={30} className="mr-8 rounded-3xl ce"></Image>
-                        <h3 className="font-semibold ">About Me</h3>
+                    <div className="flex ">
+                        <Image alt="profile picture" src={"/profile.png"} width={80} height={80} className={"mr-8 rounded-full"} unoptimized></Image>
+                        <h2 className="font-bold text-2xl self-center">About Me</h2>
                     </div>
                     <p></p>
                 </div>

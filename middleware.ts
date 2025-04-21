@@ -1,24 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { match } from "@formatjs/intl-localematcher"
+import Negotiator from 'negotiator'
 
 const locales = ['en', 'cs'];
+let headers = {"accept-language":'en-US,en;q=0.5' };
+let language = new Negotiator({headers}).languages();
 const defaultLocale = 'en';
-
-export function getLocale(request: NextRequest) {
-    const acceptLanguage = request.headers.get('accept-language') || '';
-    const matchedLocale = locales.find((locale) => acceptLanguage.includes(locale));
-    return matchedLocale || defaultLocale;
-}
+const mathedLang = match(language, locales, defaultLocale);
 
 export function middleware(request: NextRequest) {
     const { pathname, search } = request.nextUrl;
     if (pathname === '/') {
-        const locale = getLocale(request);
-        return NextResponse.redirect(new URL(`/${locale}${search}`, request.url));
+        return NextResponse.redirect(new URL(`/${mathedLang}${search}`, request.url));
     }
 
     if (!locales.some((locale) => pathname.startsWith(`/${locale}`))) {
-        const locale = getLocale(request);
-        return NextResponse.redirect(new URL(`/${locale}${pathname}${search}`, request.url));
+        return NextResponse.redirect(new URL(`/${mathedLang}${pathname}${search}`, request.url));
     }
 
     return NextResponse.next();
@@ -26,6 +23,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        '/((?!_next).*)',
+       '/((?!_next|.*\\.(?:jpg|jpeg|png|webp|svg|ico|gif|css|js|woff2?|ttf|otf)).*)',
     ],
 }
