@@ -4,7 +4,6 @@ import MenuBar from "@/components/MenuBar";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { getDictionary } from "./dictionaries";
-import Image from "next/image"
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 

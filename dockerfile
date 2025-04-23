@@ -1,20 +1,16 @@
 # Base image
 FROM node:23-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files
 COPY package.json package-lock.json ./
 
-# Install only prod dependencies first (caches this layer)
-RUN npm install --only=production
+RUN npm install 
 
-# Copy rest of the project files
-COPY . .
+COPY --chown=app:app . /app
 
-# Then install devDependencies (only for development use)
-RUN npm install --only=development
+ENV PORT=3000
+
 EXPOSE 3000
-# Default command
+
 CMD ["npm", "run", "dev"]

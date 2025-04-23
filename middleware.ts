@@ -6,6 +6,13 @@ const locales = ['en', 'cs'];
 let headers = {"accept-language":'en-US,en;q=0.5' };
 let language = new Negotiator({headers}).languages();
 const defaultLocale = 'en';
+
+
+export function getLocale(request:NextRequest){
+    const headers = request.headers.get("accept-language");
+    return headers;
+}
+
 const mathedLang = match(language, locales, defaultLocale);
 
 export function middleware(request: NextRequest) {
