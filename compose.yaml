@@ -1,15 +1,13 @@
 services:
-  web:
+  example:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: example
+    restart: always
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
     ports:
-      - "3000:3000"
-    build: .
-    command: npm run dev
-    develop:
-      watch:
-        - action: sync
-          path: ./app
-          target: ./app
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
+      - 3000:3000

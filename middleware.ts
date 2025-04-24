@@ -3,33 +3,42 @@ import { match } from "@formatjs/intl-localematcher"
 import Negotiator from 'negotiator'
 
 const locales = ['en', 'cs'];
-let headers = {"accept-language":'en-US,en;q=0.5' };
-let language = new Negotiator({headers}).languages();
 const defaultLocale = 'en';
+let prefferedLang = "";
 
+export function getLocale(request: NextRequest) {
+    const acceptLanguage = request.headers.get("accept-language") || "";
+    const negotiator = new Negotiator({
+        headers: { "accept-language": acceptLanguage }
+    });
+    const languages = negotiator.languages();
+    const matchedLang = match(languages, locales, defaultLocale);
 
-export function getLocale(request:NextRequest){
-    const headers = request.headers.get("accept-language");
-    return headers;
+    return matchedLang;
 }
 
-const mathedLang = match(language, locales, defaultLocale);
 
 export function middleware(request: NextRequest) {
     const { pathname, search } = request.nextUrl;
-    if (pathname === '/') {
-        return NextResponse.redirect(new URL(`/${mathedLang}${search}`, request.url));
+    
+
+    const matchedLocale = getLocale(request);
+
+    if (locales.some((locale) => pathname.startsWith(`/${locale}`))) {
+         prefferedLang = request.nextUrl.pathname;
+        return NextResponse.next();
     }
 
-    if (!locales.some((locale) => pathname.startsWith(`/${locale}`))) {
-        return NextResponse.redirect(new URL(`/${mathedLang}${pathname}${search}`, request.url));
+    if(!locales.some((locale) => pathname.startsWith(`${locales}`))){ 
+        const url = request.nextUrl.clone();
+        url.pathname = `/${matchedLocale}${pathname}`;
+        return NextResponse.redirect(url);
     }
-
-    return NextResponse.next();
+    
 }
 
 export const config = {
-    matcher: [
-       '/((?!_next|.*\\.(?:jpg|jpeg|png|webp|svg|ico|gif|css|js|woff2?|ttf|otf)).*)',
+    matcher: [ '/',
+        '/((?!_next|.*\\.(?:jpg|jpeg|png|webp|svg|ico|gif|css|js|woff2?|ttf|otf)).*)',
     ],
 }

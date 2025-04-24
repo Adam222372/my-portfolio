@@ -7,6 +7,8 @@ import { getDictionary } from "./dictionaries";
 import "bootstrap-icons/font/bootstrap-icons.css"
 
 
+const dynamic = "force-dynamic"
+
 const inter = Inter({
   subsets: ["latin"],
 });
@@ -22,9 +24,9 @@ export default async function RootLayout({
   const dictionary = await getDictionary(lang);
 
   return (
-    <html lang={(await params).lang} className={inter.className}>
+    <html lang={lang} className={inter.className}>
       <body>
-        <MenuBar dictionary={dictionary} />
+        <MenuBar dictionary={dictionary} lang={lang}/>
         {children}
         <footer className="flex flex-col items-center  h-[125px]">
           <h3 className="mt-4 mb-2 font-bold">Adam Holeček</h3>

@@ -40,7 +40,7 @@ export default async function Page({
                         <Image alt="profile picture" src={"/profile.png"} width={80} height={80} className={"mr-8 rounded-full"} unoptimized></Image>
                         <h2 className="font-bold text-2xl self-center">About Me</h2>
                     </div>
-                    <p className="p-4">ahoj</p>
+                    <p className="p-4">ahoj jak se mas</p>
                 </div>
             </div>
 
