@@ -1,10 +1,30 @@
+"use client"
 import React from "react";
 import { getDictionary } from "../dictionaries";
+import { useState } from "react";
 
 export default async function Contact({params}: {params: Promise<{lang: "en" | "cs"}>}) {
+    const [formData, setFormData] = useState({email: '', subject: '', message: '' }); 
+
+
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+          });
+          setFormData({email: '', subject: '', message: '' });
+
+    }
+
+
+
+
     
     const dictionary = await getDictionary((await (params)).lang);
-
     return (
         <div className="mt-[100px] flex flex-col justify-center items-center">
             <div className="flex justify-center flex-col items-center self-center">
