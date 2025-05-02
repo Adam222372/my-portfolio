@@ -1,10 +1,8 @@
-"use client"
 import React from "react";
 import { getDictionary } from "../dictionaries";
-import { useState } from "react";
 
 export default async function Contact({params}: {params: Promise<{lang: "en" | "cs"}>}) {
-    const [formData, setFormData] = useState({email: '', subject: '', message: '' }); 
+    /* const [formData, setFormData] = useState({email: '', subject: '', message: '' }); 
 
 
 
@@ -19,7 +17,7 @@ export default async function Contact({params}: {params: Promise<{lang: "en" | "
           setFormData({email: '', subject: '', message: '' });
 
     }
-
+    */
 
 
 
