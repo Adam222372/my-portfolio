@@ -1,13 +1,12 @@
 services:
-  example:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: example
-    restart: always
+  web:
+    build: .
     volumes:
       - ./:/app
       - /app/node_modules
-      - /app/.next
+    environment:
+      - NODE_ENV=development
     ports:
       - 3000:3000
+
+    
