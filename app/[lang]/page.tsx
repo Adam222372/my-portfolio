@@ -1,6 +1,7 @@
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
 import React from "react";
+//import { useState } from "react";
 import { getDictionary } from "./dictionaries"
 import Image from "next/image";
 
@@ -12,12 +13,14 @@ export default async function Page({
     const { lang } = await params;
     const dictionary = await getDictionary(lang);
 
+    //const [isNavBarOpened, setIsNavBarOpened] = useState(undefined)
+
     return (
         <div>
             <div className="relative flex  md:h-[500px] w-full flex-col items-center justify-center md:my-30 my-30">
-                <DotPattern className={cn("md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]")}></DotPattern>
+                <DotPattern className={cn("[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]")}></DotPattern>
                 <div className="text-center align-middle backdrop-blur-xs rounded-lg p-4 bg-real-black/50  tracking-[-2px] w-[90%] md:w-[80%] lg:w-[60%] m-6">
-                    <h1 className="text-[60px]/16 font-semibold md:text-[96px]/25">
+                    <h1 className="text-[64px]/16 font-semibold md:text-[96px]/25">
                         <span className="bg-gradient-to-r from-white to-[#4896B5] font-bold italic bg-clip-text text-transparent">
                             Modern
                         </span>
