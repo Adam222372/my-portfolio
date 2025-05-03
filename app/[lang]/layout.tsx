@@ -28,13 +28,17 @@ export default async function RootLayout({
       <body>
         <MenuBar dictionary={dictionary} lang={lang}/>
         {children}
-        <footer className="flex flex-col items-center  h-[125px]">
-          <h3 className="mt-4 mb-2 font-bold">Adam Holeček</h3>
-          <Link href={"mailto:adamholecek22@gmail.com"}>adamholecek22@gmail.com</Link>
-          <Link href={"tel:+420603488922"}>+420603488922</Link>
-          <div className="flex space-x-2">
-            <Link href={"https://github.com/Adam222372"}><i className="bi bi-github text-white"></i></Link>
-            <Link href="https://www.linkedin.com/in/adam-holeček-28b606312/"><i className="bi bi-linkedin text-white"></i></Link>
+        <footer className="flex flex-col items-center h-[125px] p-2">
+          <div className="mt-4 flex flex-col items-center">
+            <h3 className="font-bold">Adam Holeček</h3>
+            <div className="flex flex-col items-center">
+              <Link href={"mailto:adamholecek22@gmail.com"} className="p-1">adamholecek22@gmail.com</Link>
+              <Link href={"tel:+420603488922"} className="p-1">+420603488922</Link>
+            </div>
+          </div>
+          <div className="flex space-x-2 p-2">
+            <Link href={"https://github.com/Adam222372"}><i className="bi bi-github text-white text-2xl"></i></Link>
+            <Link href="https://www.linkedin.com/in/adam-holeček-28b606312/"><i className="bi bi-linkedin text-white text-2xl"></i></Link>
           </div>
         </footer>
       </body>

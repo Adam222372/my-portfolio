@@ -14,14 +14,10 @@ export default async function Page({
 
     return (
         <div>
-            <div className="relative flex h-[500px] w-full flex-col items-center justify-center my-30">
-                <DotPattern
-                    className={cn(
-                        "[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]"
-                    )}
-                ></DotPattern>
-                <div className="text-center backdrop-blur-xs rounded-lg p-4 bg-real-black/50 tracking-[-2px] w-[100%] md:w-[80%] lg:w-[60%]">
-                    <h1 className="text-[96px]/25 font-semibold">
+            <div className="relative flex  md:h-[500px] w-full flex-col items-center justify-center md:my-30 my-30">
+                <DotPattern className={cn("md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]")}></DotPattern>
+                <div className="text-center align-middle backdrop-blur-xs rounded-lg p-4 bg-real-black/50  tracking-[-2px] w-[90%] md:w-[80%] lg:w-[60%] m-6">
+                    <h1 className="text-[60px]/16 font-semibold md:text-[96px]/25">
                         <span className="bg-gradient-to-r from-white to-[#4896B5] font-bold italic bg-clip-text text-transparent">
                             Modern
                         </span>
@@ -32,19 +28,19 @@ export default async function Page({
                         Brands
                         <span className=" text-electric-blue">.</span>
                     </h1>
-                    <p className="m-4 py-4 tracking-[0.1em] text-xl ">
+                    <p className=" m-4 md:m-4 md:py-4 tracking-[0.1em] md:text-xl ">
                         {dictionary["heading-description"]}
                     </p>
 
                 </div>
             </div>
-            <div className="bg-[linear-gradient(to_bottom,_#0a0a0a_0%,_#171717_10%,_#252525_100%)] bg-cover bg-no-repeat bg-center h-[1000px] flex flex-col items-center justify-center">
-                <div className="bg-jet-black shadow-electric-blue/50 shadow-2xl w-[700px] h-[400px] rounded-lg flex flex-col m-8">
+            <div className="bg-[linear-gradient(to_bottom,_#0a0a0a_0%,_#171717_10%,_#252525_100%)] bg-cover bg-no-repeat bg-center  flex flex-col items-center justify-center">
+                <div className="bg-jet-black shadow-electric-blue/50 shadow-2xl w-[400px] h-[400px] rounded-lg flex flex-col m-8 md:w-[500px] lg:w-[700px] sm:w-[500px]">
                     <div className="flex p-4">
                         <Image alt="profile picture" src={"/profile.png"} width={80} height={80} className={"mr-8 rounded-full"}></Image>
                         <h2 className="font-bold text-2xl self-center">About Me</h2>
                     </div>
-                    <p className="p-4"></p>
+                    <p className="p-4">text</p>
                 </div>
             </div>
 
