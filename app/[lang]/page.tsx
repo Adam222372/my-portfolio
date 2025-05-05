@@ -19,7 +19,7 @@ export default async function Page({
         <div>
             <div className="relative flex md:h-[500px] h-[400px] w-full flex-col items-center justify-center md:my-30 my-25">
                 <DotPattern className={cn("[mask-image:radial-gradient(250px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] md:[mask-image:radial-gradient(500px_circle_at_center,white,transparent)] lg:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)]")}></DotPattern>
-                <div className="text-center backdrop-blur-xs rounded-2xl p-4 bg-jet-black/20 tracking-[-2px] w-[85%] sm:w-[60%] md:w-[80%] lg:w-[60%] m-6 shadow-2xl shadow-electric-blue/40">
+                <div className="text-center backdrop-blur-xs rounded-2xl p-8 bg-space-black/50 tracking-[-2px] w-[85%] sm:w-[65%] md:w-[80%] lg:w-[60%] m-6 shadow-2xl shadow-electric-blue/40">
                     <h1 className="text-[45px]/12 font-semibold md:text-[90px]/22 lg:text-[96px]/25">
                         <span className="bg-gradient-to-r from-white to-[#4896B5] font-bold italic bg-clip-text text-transparent">
                             Modern
@@ -31,6 +31,7 @@ export default async function Page({
                         Brands
                         <span className=" text-electric-blue">.</span>
                     </h1>
+                    
                     <p className=" m-4 md:m-4 md:py-4 tracking-[0.1em] md:text-xl ">
                         {dictionary["heading-description"]}
                     </p>
