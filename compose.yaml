@@ -1,9 +1,8 @@
 services:
   web:
-    build: .
+    build: ./app
     volumes:
-      - ./:/app
-      - /app/node_modules
+      - ./app:/app
     ports:
       - 3000:3000
 
