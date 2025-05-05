@@ -3,13 +3,11 @@ FROM node:23-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
-RUN npm install
+RUN npm install 
 
-COPY . .
-
-RUN npm run build 
+COPY . /app
 
 EXPOSE 3000
 

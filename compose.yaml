@@ -1,9 +1,7 @@
 services:
   web:
-    build: ./app
+    build: .
     volumes:
-      - ./app:/app
+      - ./:/app
     ports:
       - 3000:3000
-
-    
