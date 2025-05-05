@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 type MenuBarProps = {
-    dictionary: any; // You can replace `any` with your dictionary type if available
+    dictionary: any; 
     lang: "cs" | "en";
 };
 
