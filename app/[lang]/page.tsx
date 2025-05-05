@@ -1,7 +1,6 @@
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
 import React from "react";
-//import { useState } from "react";
 import { getDictionary } from "./dictionaries"
 import Image from "next/image";
 
@@ -13,7 +12,6 @@ export default async function Page({
     const { lang } = await params;
     const dictionary = await getDictionary(lang);
 
-    //const [isNavBarOpened, setIsNavBarOpened] = useState(undefined)
 
     return (
         <div>

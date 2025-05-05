@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
-import {MenuBar} from "@/components/MenuBar"
+import { MenuBar } from "@/components/MenuBar"
+import { MenuList } from "@/components/MenuList"
 
 
 export function useMediaQuery() {
