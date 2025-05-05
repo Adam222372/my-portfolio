@@ -7,7 +7,7 @@ COPY package.json package-lock.json ./
 
 RUN npm install 
 
-COPY --chown=app:app . /app
+COPY . /app
 
 ENV PORT=3000
 
