@@ -27,7 +27,7 @@ export default async function Contact({params}: {params: Promise<{lang: "en" | "
         <div className="mt-[100px] flex flex-col justify-center items-center">
             <div className="flex justify-center flex-col items-center self-center">
                 <form action="/contact" method="POST" className="flex flex-col my-8">
-                    <div className="flex space-y-2 justify-between w-full">
+                    <div className="flex space-y-2 flex-wrap justify-between w-full">
                         <input
                             type="email"
                             name="email"
@@ -49,7 +49,7 @@ export default async function Contact({params}: {params: Promise<{lang: "en" | "
                         name="notes"
                         placeholder={dictionary.contact.message}
                         required
-                        className="border-luxury-gray border-2 focus:border-white focus:outline-hidden rounded-xl min-w-125 max-w-lg h-70 min-h-75 resize placeholder:ml-2 p-[1rem]"
+                        className="border-luxury-gray border-2 focus:border-white focus:outline-hidden rounded-xl  max-w-lg h-70  resize placeholder:ml-2 p-[1rem]"
                     ></textarea>
 
                     <div className="flex justify-end items-center">
