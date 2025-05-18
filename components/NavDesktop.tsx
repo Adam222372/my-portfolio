@@ -8,7 +8,7 @@ type NavDesktopProps = {
 
 export default function NavDesktop({ dictionary, lang }: NavDesktopProps) {
     return (
-        <div style={{ borderBottomColor: "var(--color-luxury-gray)" }} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[10px] bg-real-black/70 border-b-luxury-gray border-b-2">
+        <div>
             <div className="flex items-center justify-between px-8 m-4">
                 <Link href={`/${lang}`} className="text-[16px] font-bold">Adam Holeček</Link>
 
