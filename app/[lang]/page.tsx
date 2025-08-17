@@ -30,22 +30,7 @@ export default async function Page({
                     </h1>
                 </div>
             </div>
-            <div className="bg-[linear-gradient(to_bottom,_#0a0a0a_0%,_#171717_10%,_#252525_100%)] flex flex-col items-center justify-center">
-                <div className="bg-jet-black shadow-electric-blue/50 shadow-2xl w-[300px] h-[300px] rounded-lg flex flex-col m-8 md:w-[500px] lg:w-[700px] sm:w-[500px]">
-                    <div className="flex p-4">
-                        <Image alt="profile picture" src={"/profile.png"} width={80} height={80} className={"mr-8 rounded-full"}></Image>
-                        <h2 className="font-bold text-2xl self-center">About Me</h2>
-                    </div>
-                    <p className="p-4">text</p>
-                </div>
-                <div className="sticky">
-                <ul>
-                    <li>cvgcvb</li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-            </div>
+            
         </div>
     );
 }

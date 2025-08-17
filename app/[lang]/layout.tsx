@@ -1,10 +1,10 @@
-import "../globals.css";
-import NavDesktop from "@/components/NavDesktop";
+import "./globals.css";
+import NavDesktop from "@/components/menu/NavDesktop";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { getDictionary } from "./dictionaries";
 import "bootstrap-icons/font/bootstrap-icons.css"
-import NavMobile from "@/components/NavMobile";
+import NavMobile from "@/components/menu/NavMobile";
 
 
 const dynamic = "force-dynamic"
@@ -29,7 +29,7 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </head>
       <body>
-        <nav style={{ borderBottomColor: "var(--color-luxury-gray)" }} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[10px] bg-real-black/70 border-b-luxury-gray border-b-2">
+        <nav style={{ borderBottomColor: "var(--color-gray)" }} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[10px] bg-real-black/70 border-b-luxury-gray border-b-2">
           {/*Desktop nav*/}
           <div className="hidden md:block">
             <NavDesktop dictionary={dictionary} lang={lang} />
