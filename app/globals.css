@@ -1,16 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @theme{
+  /* this color is used as additional */
   --color-electric-blue: #22A1D4;
-  --color-jet-black: #252525;
-  --color-space-black: #212121;
-  --color-real-black: #0a0a0a;
-  --color-luxury-gray: #2a2a2a;
-  --color-middle-black: #171717;
-  --color-linear-bg: linear-gradient(to bottom, #0a0a0a, #171717 10%, #252525 100%);
+  /* this color: navbar */
+  --color-dark-black: #0B0B0B;
+  /* this color: grid elements */
+  --color-dark-grey: #171717;
+  /* this color: borders*/
+  --color-gray: #2A2A2A;
 }
+
 
 body {
   background: #101010;
