@@ -22,8 +22,7 @@
             "serverReadyAction": {
               "action": "openExternally", // <-- This opens in your default browser
               "pattern": "- Local:.+(https?://.+)",
-              "uriFormat": "%s",
-              "webRoot": "${workspaceFolder}"
+              "uriFormat": "%s"
             }},
     ]
 }
