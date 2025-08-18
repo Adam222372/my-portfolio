@@ -29,7 +29,7 @@ export function DotPattern({
   glow = false,
   fadeEdges = false,
   ...props
-}: DotPatternProps) {
+}: Readonly<DotPatternProps>) {
   const id = useId()
   const containerRef = useRef<SVGSVGElement>(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })

@@ -2,6 +2,7 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import React from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default async function Page({ params }: { params: { lang: "cs" | "en" } }) {
     const { lang } = params;
@@ -22,7 +23,10 @@ export default async function Page({ params }: { params: { lang: "cs" | "en" } }
                         <span className=" text-electric-blue">.</span>
                     </h1>
                     <div className="m-6">
-                        <Link href={`/${lang}/contact`} className="bg-electric-blue rounded-xl text-base md:text-xl p-3 font-semibold">Let's build your project!</Link>
+                        <Link href={`/${lang}/contact`} className="bg-electric-blue rounded-xl text-base md:text-xl p-3 font-semibold">
+                            <Button>Let's build your project!</Button>
+                        </Link>
+
                     </div>
                 </div>
 
