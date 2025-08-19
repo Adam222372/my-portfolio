@@ -4,7 +4,9 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export default async function Page({ params }: { params: { lang: "cs" | "en" } }) {
+
+export default async function Page(props: { params: Promise<{ lang: "cs" | "en" }> }) {
+    const params = await props.params;
     const { lang } = params;
     return (
         <div className="mt-30">
